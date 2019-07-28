@@ -1,0 +1,3 @@
+pacman:xorg i3 git pulseaudio pulseaudio-alsa pavucontrol xorg-xinit termite firefox rofi vim maim mpv vlc gimp darktable gnome-calculator telegram-desktop lm_sensors htop nethogs network-manager-applet arandr ranger alsa-utils openvpn networkmanager-openvpn nautilus gucharmap playerctl libgphoto2 gphoto2 gvfs-gphoto2 gvfs-mtp mtpfs acpi sysstat imagemagick feh python-pip eog mplayer openssh libinput wget gedit libreoffice-fresh evince file-roller tree iptraf-ng tor chromium qbittorrent dunst simplescreenrecorder baobab gparted tmux ttf-fira-code ttf-fira-mono ttf-fira-sans awesome-terminal-fonts gimp-plugin-wavelet-denoise unrar net-tools
+
+trizen:spotify megasync nautilus-megasync postman-bin xkb-switch jcal-git gimp-plugin-registry tor-browser

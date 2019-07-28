@@ -1,0 +1,94 @@
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = true
+urgent_on_bell = true
+clickable_url = true
+font = Fira Code 14
+scrollback_lines = 10000
+search_wrap = true
+#icon_name = terminal
+#geometry = 640x480
+
+# "system", "on" or "off"
+cursor_blink = on
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+browser = firefox
+
+# set size hints for the window
+#size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+[colors]
+cursor = #5c5fd7
+#cursor_foreground = #dcdccc
+foreground = #dadada
+foreground_bold = #ffffff
+background = #262626
+#background = rgba ( 0, 0, 0, 0.7 )
+# 20% background transparency (requires a compositor)
+#background = rgba(38, 38, 38, 0.7)
+
+# if unset, will reverse foreground and background
+#highlight = #aaaa00
+
+# colors from color0 to color254 can be set
+# black
+color0 = #1a1a1a
+# red
+color1 = #d15252
+# green
+color2 = #639247
+# yellow
+color3 = #c0a161
+# blue
+color4 = #5c5fd7
+# magenta
+color5 = #7f56a3
+# cyan
+color6 = #5da0b5
+# white
+color7 = #dadada
+# black-bright
+color8 = #454545
+# red-bright
+color9 = #dd8686
+# green-bright
+color10 = #93c079
+# yellow-bright
+color11 = #ceb88b
+# blue-bright
+color12 = #8082d7
+# magenta-bright
+color13 = #ab72dd
+# cyan-bright
+color14 = #85c3d7
+# white-bright
+color15 = #ffffff
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
+

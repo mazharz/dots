@@ -1,0 +1,47 @@
+#!/bin/bash
+action=$1
+
+# reading the filenames into two arrays
+while read col0 col1 col2 col3; do
+	dot_files+=($col0)
+	config_files+=($col1)
+	sudo_flag+=($col2)
+	exec_flag+=($col3)
+done < <(sed 's:^#.*$::g' ./filename | grep .)
+
+len=${#dot_files[@]}
+for (( i=0; i<$len; i++)); do
+	if [ "$action" == "set" ]; then
+		if [ "${sudo_flag[i]}" == 1 ]; then
+			dir_name=`echo ${config_files[i]} | rev | cut -d'/' -f2- | rev`
+			mkdir -p $dir_name
+			echo "Copying" ${dot_files[i]} "to" ${config_files[i]}
+			sudo cp -f ${dot_files[i]} ${config_files[i]}
+			if [ "${exec_flag[i]}" == 1 ];then
+				sudo chmod 755 ${config_files[i]}
+			fi
+		elif [ "${sudo_flag[i]}" == 0 ]; then
+			dir_name=`echo ${config_files[i]} | rev | cut -d'/' -f2- | rev`
+			mkdir -p $dir_name
+			echo "Copying" ${dot_files[i]} "to" ${config_files[i]}
+			cp -f ${dot_files[i]} ${config_files[i]}
+			if [ "${exec_flag[i]}" == 1 ];then
+				chmod 755 ${config_files[i]}
+			fi
+		fi
+	elif [ "$action" == "get" ]; then
+		dir_name=`echo ${dot_files[i]} | rev | cut -d'/' -f2- | rev`
+		mkdir -p $dir_name
+		echo "Copying" ${config_files[i]} "to" ${dot_files[i]}
+		cp -f ${config_files[i]} ${dot_files[i]}
+		#if [ "${sudo_flag[i]}" == 1 ]; then
+		#	echo "Copying" ${config_files[i]} "to" ${dot_files[i]}
+		#	sudo cp -f ${config_files[i]} ${dot_files[i]}
+		#elif [ "${sudo_flag[i]}" == 0 ]; then
+		#	echo "Copying" ${config_files[i]} "to" ${dot_files[i]}
+		#	cp -f ${config_files[i]} ${dot_files[i]}
+		#fi
+	fi
+done
+
+

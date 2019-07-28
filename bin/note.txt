@@ -1,0 +1,5 @@
+Note that kbled and lcd need to be run with root permissions so give them 755 chmod and then +s.
+afterwards you need to visudo and then add these two lines:
+
+m47h4r ALL=(root) NOPASSWD: /home/m47h4r/bin/kbled
+m47h4r ALL=(root) NOPASSWD: /home/m47h4r/bin/lcd

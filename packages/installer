@@ -1,0 +1,13 @@
+#!/bin/bash
+
+pacman_ps=`cat ./pkg.list | grep pacman | cut -d':' -f2`
+trizen_ps=`cat ./pkg.list | grep trizen | cut -d':' -f2`
+
+sudo pacman -S $(echo "$pacman_ps")
+
+git clone https://aur.archlinux.org/trizen.git /tmp/trizen
+cd /tmp/trizen
+makepkg -si
+cd
+
+trizen -S $(echo "$trizen_ps")

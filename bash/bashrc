@@ -1,0 +1,43 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+#-----------------------------------------------
+#       ALIASES
+#-----------------------------------------------
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias r='ranger'
+alias t='vim ~/mega/todo'
+#alias tmux='TERM=xterm-256color tmux' # fix tmux color problem
+
+#-----------------------------------------------
+#       PROMPT
+#-----------------------------------------------
+COLOR="\[$(tput setaf 4)\]"
+DEFAULT="\[$(tput sgr0)\]"
+
+PS1="${COLOR}\W \$${DEFAULT} "
+#PS1='[\u@\h \W]\$ '
+
+#-----------------------------------------------
+#       PATH ADDITIONS
+#-----------------------------------------------
+PATH=$PATH:/home/m47h4r/bin
+
+#-----------------------------------------------
+#       COLORED MAN PAGES
+#-----------------------------------------------
+export LESS_TERMCAP_mb=$'\e[0;35m' # begin blinking
+export LESS_TERMCAP_md=$'\e[0;36m' # begin bold
+export LESS_TERMCAP_me=$'\e[0m'    # end mode
+export LESS_TERMCAP_se=$'\e[0m'    # end standout mode
+export LESS_TERMCAP_so=$'\e[7m'    # begin standout mode - info box
+export LESS_TERMCAP_ue=$'\e[0m'    # end underline
+export LESS_TERMCAP_us=$'\e[0;31m' # begin underline
+
+# fix ssh problem with termite/urxvt
+export TERM=xterm-256color

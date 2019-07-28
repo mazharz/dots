@@ -1,0 +1,31 @@
+rofi.modi:				window,drun,run,ssh
+rofi.width:				30
+rofi.lines:				15
+rofi.columns:			1
+rofi.font:				Fira Code 12
+rofi.bw:				0
+rofi.location:			0
+rofi.padding:			10
+rofi.xoffset:			0
+rofi.yoffset:			0
+rofi.show-icons:		True
+rofi.icon-theme:		adwaita
+rofi.terminal:			termite
+rofi.sidebar-mode:		True
+rofi.auto-select:		False
+rofi.parse-known-hosts:	True
+rofi.hide-scrollbar:	True
+rofi.line-margin:		0
+rofi.line-padding:		5
+rofi.separator-style:	solid
+rofi.sidebar-mode:		False
+rofi.show-match:		False
+rofi.display-drun:		Activate
+rofi.display-run:		Execuet
+rofi.display-window:	Window
+# state					bg			fg			bgalt		hlbg		hlfg
+rofi.color-normal:		#262626,	#dadada,	#262626,	#5c5fd7,	#262626
+rofi.color-active:		#262626,	#dadada,	#262626,	#5c5fd7,	#262626
+rofi.color-urgent:		#262626,	#dadada,	#262626,	#ff0000,	#262626
+rofi.color-window:		#262626,	#262626,	#262626
+
