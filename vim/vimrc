@@ -115,6 +115,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
+Plugin 'easymotion/vim-easymotion'
 
 
 call vundle#end()
