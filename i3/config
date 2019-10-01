@@ -228,3 +228,4 @@ exec ~/bin/wallpaper
 exec ~/bin/kb_layout
 exec nm-applet &
 exec megasync &
+exec battery_alert &
