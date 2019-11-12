@@ -1,0 +1,7 @@
+find . -type f > filenames.txt
+mkdir -p converted
+for filename in $(cat filenames.txt); do
+	ffmpeg -i $filename -c:v dnxhd -profile:v dnxhr_hq
+	-pix_fmt yuv422p -c:a pcm_s16le ${filename}.mov
+	mv ${filename}.mov converted
+done
