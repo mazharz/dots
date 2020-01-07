@@ -27,3 +27,10 @@ directory. Second is the actual path of that file. Third is the flag to which
 if the file should be copied where it needs root permissions (so that we can
 use `sudo` to copy it). Last is the flag to which if the file should be
 `chmod`ed.
+
+## brightness and visudo
+Just one small hand made mod. Must add this to the sudoers file for the
+brightness script to work:
+```
+m47h4r ALL=(root) NOPASSWD: /home/m47h4r/bin/brightness
+```
