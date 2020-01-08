@@ -17,7 +17,7 @@ alias t='vim ~/mega/todo'
 #-----------------------------------------------
 #       PROMPT
 #-----------------------------------------------
-COLOR="\[$(tput setaf 4)\]"
+COLOR="\[$(tput setaf 1)\]"
 DEFAULT="\[$(tput sgr0)\]"
 
 PS1="${COLOR}\W \$${DEFAULT} "

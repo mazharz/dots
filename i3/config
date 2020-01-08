@@ -4,7 +4,7 @@ set $mod Mod4
 # set colors
 set $bg #1a1a1a
 set $fg #dadada
-set $ac #5c5fd7
+set $ac #b93761
 
 # set the font
 font pango:Fira Code 10
@@ -169,29 +169,29 @@ client.background       $bg
 # ------------------------------------------------------
 # i3bar
 # ------------------------------------------------------
-bar {
-	status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	position bottom
-	tray_output primary
-	tray_padding 2
-	font pango:Fira Code 12
-	separator_symbol " │ "
-	#mode hide
-	#hidden_state hide
-	#modifier $mod
-
-	colors {
-		background $bg
-		statusline $bg
-		separator #aaaaaa
-		#<color class>		<border>  <background>  <text>
-		focused_workspace	$ac		$ac		$bg
-		active_workspace	$ac		$bg		$ac
-		inactive_workspace	$bg		$bg		$ac
-		urgent_workspace	#ff0000		#ff0000		$bg
-		binding_mode		$ac		$ac		$bg
-	}
-}
+#bar {
+#	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#	position bottom
+#	tray_output primary
+#	tray_padding 2
+#	font pango:Fira Code 12
+#	separator_symbol " │ "
+#	#mode hide
+#	#hidden_state hide
+#	#modifier $mod
+#
+#	colors {
+#		background $bg
+#		statusline $bg
+#		separator #aaaaaa
+#		#<color class>		<border>  <background>  <text>
+#		focused_workspace	$ac		$ac		$bg
+#		active_workspace	$ac		$bg		$ac
+#		inactive_workspace	$bg		$bg		$ac
+#		urgent_workspace	#ff0000		#ff0000		$bg
+#		binding_mode		$ac		$ac		$bg
+#	}
+#}
 
 # key bindings
 # screenshot
@@ -229,3 +229,4 @@ exec ~/bin/kb_layout
 exec nm-applet &
 exec megasync &
 exec battery_alert &
+exec_always --no-startup-id /home/m47h4r/.config/polybar/launch.sh

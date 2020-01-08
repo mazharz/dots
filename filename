@@ -15,6 +15,10 @@
 ./i3/config	/home/m47h4r/.config/i3/config	0	0
 ./i3/i3blocks.conf	/home/m47h4r/.config/i3/i3blocks.conf	0	0
 
+# polybar
+./polybar/config	/home/m47h4r/.config/polybar/config	0	0
+./polybar/launch.sh	/home/m47h4r/.config/polybar/launch.sh	0	1
+
 # ranger configs
 ./ranger/commands.py	/home/m47h4r/.config/ranger/commands.py	0	1
 ./ranger/commands_full.py	/home/m47h4r/.config/ranger/commands_full.py	0	1
