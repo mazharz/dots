@@ -24,8 +24,8 @@ rofi.display-drun:		Activate
 rofi.display-run:		Execuet
 rofi.display-window:	Window
 # state					bg			fg			bgalt		hlbg		hlfg
-rofi.color-normal:		#262626,	#dadada,	#262626,	#b93761,	#262626
-rofi.color-active:		#262626,	#dadada,	#262626,	#b93761,	#262626
-rofi.color-urgent:		#262626,	#dadada,	#262626,	#ff0000,	#262626
-rofi.color-window:		#262626,	#262626,	#262626
+rofi.color-normal:		#1a1a1a,	#dadada,	#1a1a1a,	#b93761,	#1a1a1a
+rofi.color-active:		#1a1a1a,	#dadada,	#1a1a1a,	#b93761,	#1a1a1a
+rofi.color-urgent:		#1a1a1a,	#dadada,	#1a1a1a,	#ff0000,	#1a1a1a
+rofi.color-window:		#1a1a1a,	#1a1a1a,	#1a1a1a
 

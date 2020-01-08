@@ -12,7 +12,7 @@
 ;==========================================================
 
 [colors]
-background = #262626
+background = #1a1a1a
 background-alt = #363636
 foreground = #dadada
 foreground-alt = #aaaaaa
@@ -30,8 +30,6 @@ height = 27
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-border-bottom = 1
-border-bottom-color = ${colors.border}
 line-size = 3
 line-color = #f00
 cursor-click = pointer
@@ -54,8 +52,6 @@ height = 27
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-border-bottom = 1
-border-bottom-color = ${colors.border}
 line-size = 3
 line-color = #f00
 tray-position = right
