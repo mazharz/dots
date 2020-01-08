@@ -218,6 +218,7 @@ bindsym $mod+semicolon exec ~/bin/lock
 bindsym XF86AudioNext exec playerctl -p spotify next
 bindsym XF86AudioPrev exec playerctl -p spotify previous
 bindsym XF86AudioPlay exec playerctl -p spotify play-pause
+bindsym $mod+c exec chromium --proxy-server="socks5://localhost:1088" &
 
 # needed for i3blocks for capslock and numlock
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
