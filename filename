@@ -6,41 +6,34 @@
 # columns are separated by a tab
 
 # xorg configs
-./xorg/30-touchpad.conf	/etc/X11/xorg.conf.d/30-touchpad.conf	1	0
-./xorg/Xresources	/home/m47h4r/.Xresources	0	0
-./xorg/xinitrc	/home/m47h4r/.xinitrc	0	0
+#./xorg/30-touchpad.conf	/etc/X11/xorg.conf.d/30-touchpad.conf	1	0
+#./xorg/Xresources	/home/m47h4r/.Xresources	0	0
+#./xorg/xinitrc	/home/m47h4r/.xinitrc	0	0
 
 # i3 configs
-./i3/backlight	/home/m47h4r/.config/i3/backlight	0	1
-./i3/config	/home/m47h4r/.config/i3/config	0	0
-./i3/i3blocks.conf	/home/m47h4r/.config/i3/i3blocks.conf	0	0
+#./i3/backlight	/home/m47h4r/.config/i3/backlight	0	1
+#./i3/config	/home/m47h4r/.config/i3/config	0	0
+#./i3/i3blocks.conf	/home/m47h4r/.config/i3/i3blocks.conf	0	0
 
 # polybar
-./polybar/config	/home/m47h4r/.config/polybar/config	0	0
-./polybar/launch.sh	/home/m47h4r/.config/polybar/launch.sh	0	1
+#./polybar/config	/home/m47h4r/.config/polybar/config	0	0
+#./polybar/launch.sh	/home/m47h4r/.config/polybar/launch.sh	0	1
 
 # ranger configs
-./ranger/commands.py	/home/m47h4r/.config/ranger/commands.py	0	1
-./ranger/commands_full.py	/home/m47h4r/.config/ranger/commands_full.py	0	1
-./ranger/rc.conf	/home/m47h4r/.config/ranger/rc.conf	0	0
-./ranger/rifle.conf	/home/m47h4r/.config/ranger/rifle.conf	0	0
-./ranger/scope.sh	/home/m47h4r/.config/ranger/scope.sh	0	1
+#./ranger/commands.py	/home/m47h4r/.config/ranger/commands.py	0	1
+#./ranger/commands_full.py	/home/m47h4r/.config/ranger/commands_full.py	0	1
+#./ranger/rc.conf	/home/m47h4r/.config/ranger/rc.conf	0	0
+#./ranger/rifle.conf	/home/m47h4r/.config/ranger/rifle.conf	0	0
+#./ranger/scope.sh	/home/m47h4r/.config/ranger/scope.sh	0	1
 
 # termite configs
-./termite/config	/home/m47h4r/.config/termite/config	0	0
+#./termite/config	/home/m47h4r/.config/termite/config	0	0
 
 # dunst configs
-./dunst/dunstrc	/home/m47h4r/.config/dunst/dunstrc	0	0
-
-# vim configs
-./vim/vimrc	/home/m47h4r/.vimrc	0	0
-./vim/colorscheme/deus.vim	/home/m47h4r/.vim/colors/deus.vim	0	0
+#./dunst/dunstrc	/home/m47h4r/.config/dunst/dunstrc	0	0
 
 # bash configs
-./bash/bashrc	/home/m47h4r/.bashrc	0	0
-
-# rofi configs
-./rofi/config	/home/m47h4r/.config/rofi/config	0	0
+#./bash/bashrc	/home/m47h4r/.bashrc	0	0
 
 # bin files
 ./bin/brightness	/home/m47h4r/bin/brightness	0	1
@@ -52,4 +45,14 @@
 ./bin/volume	/home/m47h4r/bin/volume	0	1
 ./bin/wallpaper	/home/m47h4r/bin/wallpaper	0	1
 ./bin/vpn_cisco_us	/home/m47h4r/bin/vpn_cisco_us	0	1
+./bin/convert_mov_30fps	/home/m47h4r/bin/convert_mov_30fps	0	1
+./bin/convert_mov_halfspeed	/home/m47h4r/bin/convert_mov_halfspeed	0	1
+./bin/convert_mp4_mov	/home/m47h4r/bin/convert_mp4_mov	0	1
+./bin/mv_tif	/home/m47h4r/bin/mv_tif	0	1
 
+# vim configs
+#./vim/vimrc	/home/m47h4r/.vimrc	0	0
+#./vim/colorscheme/deus.vim	/home/m47h4r/.vim/colors/deus.vim	0	0
+
+# rofi configs
+./rofi/config	/home/m47h4r/.config/rofi/config	0	0

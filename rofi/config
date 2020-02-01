@@ -5,7 +5,7 @@ rofi.columns:			1
 rofi.font:				Fira Code 12
 rofi.bw:				0
 rofi.location:			0
-rofi.padding:			10
+rofi.padding:			15
 rofi.xoffset:			0
 rofi.yoffset:			0
 rofi.show-icons:		True
@@ -21,7 +21,7 @@ rofi.separator-style:	solid
 rofi.sidebar-mode:		False
 rofi.show-match:		False
 rofi.display-drun:		Activate
-rofi.display-run:		Execuet
+rofi.display-run:		Execute
 rofi.display-window:	Window
 # state					bg			fg			bgalt		hlbg		hlfg
 rofi.color-normal:		#1a1a1a,	#dadada,	#1a1a1a,	#b93761,	#1a1a1a
