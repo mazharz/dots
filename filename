@@ -49,6 +49,7 @@
 ./bin/convert_mov_halfspeed	/home/m47h4r/bin/convert_mov_halfspeed	0	1
 ./bin/convert_mp4_mov	/home/m47h4r/bin/convert_mp4_mov	0	1
 ./bin/mv_tif	/home/m47h4r/bin/mv_tif	0	1
+./bin/regex_renamer.py	/home/m47h4r/bin/regex_renamer.py	0	1
 
 # vim configs
 #./vim/vimrc	/home/m47h4r/.vimrc	0	0
