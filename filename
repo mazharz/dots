@@ -55,5 +55,8 @@
 #./vim/vimrc	/home/m47h4r/.vimrc	0	0
 #./vim/colorscheme/deus.vim	/home/m47h4r/.vim/colors/deus.vim	0	0
 
+# nvim configs
+./nvim/init.vim	/home/m47h4r/.config/nvim/init.vim	0	0
+
 # rofi configs
 ./rofi/config	/home/m47h4r/.config/rofi/config	0	0
