@@ -73,6 +73,6 @@ URxvt*allow_bold: true
 ! set cursor size
 Xcursor.size: 32
 
-!URxvt*transparent: true
-!URxvt*shading: 25
-!URxvt*blurRadius: 50x50
+URxvt*transparent: true
+URxvt*shading: 25
+!URxvt*blurRadius: 20x20

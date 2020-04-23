@@ -1,16 +1,3 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;==========================================================
-
 [colors]
 background = #1a1a1a
 background-alt = #363636
@@ -21,9 +8,7 @@ primary = #b93761
 secondary = #e60053
 alert = #bd2c40
 
-[bar/bar_top]
-monitor = HDMI-0
-monitor-fallback = eDP-1-1
+[bar/top_bar]
 bottom = false
 width = 100%
 height = 30
@@ -38,34 +23,9 @@ font-0 = fixed:pixelsize=13;1
 font-1 = unifont:fontformat=truetype:size=13:antialias=false;0
 font-2 = siji:pixelsize=13;1
 
-modules-left = battery 
-modules-center = date
-modules-right = pulseaudio xkeyboard wlan eth
-
-
-[bar/bar_bottom]
-monitor = HDMI-0
-monitor-fallback = eDP-1-1
-bottom = true
-width = 100%
-height = 30
-fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 3
-line-color = #f00
-tray-position = right
-tray-padding = 2
-tray-maxsize = 22
-cursor-click = pointer
-cursor-scroll = ns-resize
-font-0 = fixed:pixelsize=13;1
-font-1 = unifont:fontformat=truetype:size=13:antialias=false;0
-font-2 = siji:pixelsize=13;1
-
-modules-left = i3
-modules-center = filesystem 
-modules-right = xbacklight memory cpu
+modules-left = i3 
+modules-center = 
+modules-right = xbacklight memory cpu pulseaudio wlan eth battery xkeyboard date
 
 
 [module/xkeyboard]
@@ -76,29 +36,10 @@ label-layout = %layout%
 label-layout-padding = 2
 label-layout-margin = 2
 
-label-indicator-padding = 2
-label-indicator-margin = 2
-label-indicator-background = ${colors.primary}
-
-
-[module/filesystem]
-type = internal/fs
-interval = 60
-
-mount-0 = /
-mount-1 = /home/m47h4r/mzd
-
-format-mounted = <label-mounted> <bar-used>
-format-mounted-margin = 2
-
-bar-used-indicator = |
-bar-used-width = 10
-bar-used-foreground-0 = ${colors.primary}
-bar-used-fill = ─
-bar-used-empty = ─
-bar-used-empty-foreground = ${colors.foreground-alt}
-
-label-mounted = %mountpoint% %percentage_used%%
+;label-indicator = some
+;label-indicator-padding = 2
+;label-indicator-margin = 2
+;label-indicator-background = ${colors.primary}
 
 
 [module/i3]
@@ -137,73 +78,65 @@ label-urgent-padding = 2
 
 [module/xbacklight]
 type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+label = LCD %percentage%%
+format-padding = 2
+format-margin = 2
 
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
 
+
 [module/cpu]
 type = internal/cpu
 interval = 5
-format-prefix = "C"
+format-prefix = "CPU"
 format-padding = 2
 format-margin = 2
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage:2%%
 label-foreground = ${colors.foreground}
 
+
 [module/memory]
 type = internal/memory
 interval = 5
-format-prefix = "M "
+format-prefix = "Memory"
 format-padding = 2
 format-margin = 2
 format-prefix-foreground = ${colors.foreground-alt}
 label = %percentage_used%%
 label-foreground = ${colors.foreground}
 
+
 [module/wlan]
 type = internal/network
 interface = wlp7s0
 interval = 5.0
-
 format-connected = <label-connected>
 label-connected = %essid%
 label-connected-margin = 2
-
+format-connected-padding = 2
+format-connected-margin = 2
 format-disconnected = <label-disconnected>
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
-
 
 [module/eth]
 type = internal/network
 interface = enp8s0
 interval = 3.0
-
 format-connected-prefix = "ETH: "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
-
+format-connected-padding = 2
+format-connected-margin = 2
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
+
 
 [module/date]
 type = internal/date
@@ -216,25 +149,21 @@ time = "%H:%M"
 time-alt =
 
 label = "%date%   %time%"
+format-padding = 2
+format-margin = 2
 
 
 [module/pulseaudio]
 type = internal/pulseaudio
-
-format-volume = <label-volume> <bar-volume>
-label-volume = V
+format-volume = <label-volume>
+label-volume = "Volume %percentage%%"
+format-volume-padding = 2
+format-volume-margin = 2
 label-volume-foreground = ${root.foreground}
-
 label-muted = muted
+label-muted-padding = 2
+label-muted-margin = 2
 label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-foreground-0 = ${colors.primary}
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-fill = ─
-bar-volume-empty = ─
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 
 [module/battery]
@@ -242,22 +171,16 @@ type = internal/battery
 battery = BAT0
 adapter = ADP0
 full-at = 98
-
-format-charging = <label-charging> <bar-capacity>
+format-charging = <label-charging>
+format-charging-prefix = "Battery "
 format-charging-padding = 2
+format-charging-margin = 2
 label-charging = %percentage%% +
-
-format-discharging = <label-discharging> <bar-capacity>
+format-discharging = <label-discharging>
+format-discharging-prefix = "Battery"
 format-discharging-padding = 2
+format-discharging-margin = 2
 label-discharging = %percentage%% -
-
-bar-capacity-width = 10
-bar-capacity-foreground-0 = ${colors.primary}
-bar-capacity-gradient = false
-bar-capacity-indicator = |
-bar-capacity-fill = ─
-bar-capacity-empty = ─
-bar-capacity-empty-foreground = ${colors.foreground-alt}
 
 
 [settings]
