@@ -41,8 +41,8 @@ set hlsearch
 
 " indentation
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " tab replacement
 set list
@@ -72,21 +72,6 @@ noremap <leader>p :bp<CR>
 " unhighlight search results using <Ctrl-l>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
-" ease use of curly brackets for JS
-inoremap {{ {}<Left>
-inoremap {{{ {<Enter>}<Esc>O
-" ease use of square brackets
-inoremap [[ []<Left>
-" ease use of paranthesis for JS
-inoremap (( ()<Left>
-" ease use of double and single quotes for JS
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap `` ``<Left>
-" ease use of comma and semicolon in for JS
-inoremap ,, <ESC>A,
-inoremap ;; <ESC>A;
-
 " put a vertical line at column 80
 set colorcolumn=80
 
@@ -101,7 +86,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+Plug 'wesQ3/vim-windowswap'
 
 call plug#end()
 
@@ -295,3 +280,15 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+
+" prettier (must be installed via npm manually)
+" FORMATTERS
+au FileType javascript setlocal formatprg=prettier\ --parser\ typescript
+au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType css setlocal formatprg=prettier\ --parser\ css
+
+noremap <leader>b mzgggqG`z
