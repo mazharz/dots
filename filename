@@ -15,6 +15,8 @@
 ./bin/mv_tif	/home/m47h4r/bin/mv_tif	0	1
 ./bin/regex_renamer.py	/home/m47h4r/bin/regex_renamer.py	0	1
 ./bin/chrome.sh	/home/m47h4r/bin/chrome.sh	0	1
+./bin/random_player.sh	/home/m47h4r/bin/random_player.sh	0	1
+./bin/random_player.sh.readme	/home/m47h4r/bin/random_player.sh.readme	0	0
 
 # vim configs
 #./vim/vimrc	/home/m47h4r/.vimrc	0	0

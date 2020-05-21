@@ -33,6 +33,9 @@ set backspace=indent,eol,start
 " Customization
 " ======================================================================
 
+" set leader to comma
+let mapleader = ","
+
 " search
 " find next match as typing
 set incsearch
@@ -53,7 +56,7 @@ set clipboard=unnamedplus
 set ignorecase
 
 " keep the cursor visible within 3 lines when scrolling
-set scrolloff=3
+set scrolloff=1
 
 " <C-Space> for Vim's keyword autocomplete
 "inoremap <Nul> <C-n>
@@ -61,8 +64,8 @@ set scrolloff=3
 " paste mode
 set pastetoggle=<f9>
 
-" select all with <leader>a (default \a)
-noremap <leader>a ggVG
+" select all with <leader>a
+noremap <leader>A ggVG
 
 " next file
 noremap <leader>n :bn<CR>
@@ -87,6 +90,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wesQ3/vim-windowswap'
+Plug 'preservim/nerdcommenter'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -284,12 +289,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " prettier (must be installed via npm manually)
 " FORMATTERS
-au FileType javascript setlocal formatprg=prettier\ --parser\ typescript
-au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript
-au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-au FileType html setlocal formatprg=js-beautify\ --type\ html
-au FileType scss setlocal formatprg=prettier\ --parser\ css
-au FileType css setlocal formatprg=prettier\ --parser\ css
+au FileType javascript setlocal formatprg=prettier\ --parser\ typescript\ --use-tabs
+au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript\ --use-tabs
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript\ --use-tabs
+au FileType html setlocal formatprg=js-beautify\ --type\ html\ --use-tabs
+au FileType scss setlocal formatprg=prettier\ --parser\ css\ --use-tabs
+au FileType css setlocal formatprg=prettier\ --parser\ css\ --use-tabs
 
 noremap <leader>b mzgggqG`z
 
@@ -298,15 +303,25 @@ noremap <leader>b mzgggqG`z
 nnoremap <leader>t :terminal<CR>
 tnoremap <Esc> <C-\><C-n>
 " use alt+direction to navigate
-tnoremap <A-h> <C-\><C-N><C-w>h                                            
-tnoremap <A-j> <C-\><C-N><C-w>j                                            
-tnoremap <A-k> <C-\><C-N><C-w>k                                            
-tnoremap <A-l> <C-\><C-N><C-w>l                                            
-inoremap <A-h> <C-\><C-N><C-w>h                                            
-inoremap <A-j> <C-\><C-N><C-w>j                                            
-inoremap <A-k> <C-\><C-N><C-w>k                                            
-inoremap <A-l> <C-\><C-N><C-w>l                                            
-nnoremap <A-h> <C-w>h                                                      
-nnoremap <A-j> <C-w>j                                                      
-nnoremap <A-k> <C-w>k                                                      
+tnoremap <A-h> <C-\><C-N><C-w>h
+tnoremap <A-j> <C-\><C-N><C-w>j
+tnoremap <A-k> <C-\><C-N><C-w>k
+tnoremap <A-l> <C-\><C-N><C-w>l
+inoremap <A-h> <C-\><C-N><C-w>h
+inoremap <A-j> <C-\><C-N><C-w>j
+inoremap <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
+
+" nerdcommenter
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+" set easier shortcut for the only useful feature of nerdcommenter ;)
+map <leader>/ <plug>NERDCommenterToggle
