@@ -92,6 +92,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wesQ3/vim-windowswap'
 Plug 'preservim/nerdcommenter'
 Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
