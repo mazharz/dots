@@ -8,6 +8,9 @@
 # bash configs
 #./bash/bashrc	/home/m47h4r/.bashrc	0	0
 
+# zsh config
+./zsh/zshrc	/home/m47h4r/.zshrc	0	0
+
 # bin files
 ./bin/convert_mov_30fps	/home/m47h4r/bin/convert_mov_30fps	0	1
 ./bin/convert_mov_halfspeed	/home/m47h4r/bin/convert_mov_halfspeed	0	1
@@ -17,6 +20,7 @@
 ./bin/chrome.sh	/home/m47h4r/bin/chrome.sh	0	1
 ./bin/random_player.sh	/home/m47h4r/bin/random_player.sh	0	1
 ./bin/random_player.sh.readme	/home/m47h4r/bin/random_player.sh.readme	0	0
+./bin/random_wallpaper.sh	/home/m47h4r/bin/random_wallpaper.sh	0	1
 
 # vim configs
 #./vim/vimrc	/home/m47h4r/.vimrc	0	0
