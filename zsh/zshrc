@@ -116,3 +116,6 @@ alias less="cless"
 alias cat="ccat"
 alias cp="cpv -p -o -g"
 alias vim="nvim"
+
+# fzf
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
