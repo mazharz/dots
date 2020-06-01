@@ -5,39 +5,33 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-#-----------------------------------------------
-#       ALIASES
-#-----------------------------------------------
+# prompt
+COLOR="\[$(tput setab 4)$(tput setaf 0)\]"
+COLOR_REV="\[$(tput setaf 4)\]"
+DEFAULT="\[$(tput sgr0)\]"
+PS1="${COLOR} \w ${DEFAULT}${COLOR_REV}${DEFAULT} "
+
+# path
+PATH=$PATH:/home/m47h4r/bin
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+
+# aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias r='ranger'
-alias t='vim ~/mega/todo'
-#alias tmux='TERM=xterm-256color tmux' # fix tmux color problem
+alias vim='nvim'
 
-#-----------------------------------------------
-#       PROMPT
-#-----------------------------------------------
-COLOR="\[$(tput setaf 1)\]"
-DEFAULT="\[$(tput sgr0)\]"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-PS1="${COLOR}\W \$${DEFAULT} "
-#PS1='[\u@\h \W]\$ '
+# enable fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
 
-#-----------------------------------------------
-#       PATH ADDITIONS
-#-----------------------------------------------
-PATH=$PATH:/home/m47h4r/bin
+# these were plugins that you used on zsh, try and find alts for bash
+# colored-man-pages      
+# colorize               
+# zsh-autosuggestions    
+# zsh-syntax-highlighting
+                        
 
-#-----------------------------------------------
-#       COLORED MAN PAGES
-#-----------------------------------------------
-export LESS_TERMCAP_mb=$'\e[0;35m' # begin blinking
-export LESS_TERMCAP_md=$'\e[0;36m' # begin bold
-export LESS_TERMCAP_me=$'\e[0m'    # end mode
-export LESS_TERMCAP_se=$'\e[0m'    # end standout mode
-export LESS_TERMCAP_so=$'\e[7m'    # begin standout mode - info box
-export LESS_TERMCAP_ue=$'\e[0m'    # end underline
-export LESS_TERMCAP_us=$'\e[0;31m' # begin underline
-
-# fix ssh problem with termite/urxvt
-export TERM=xterm-256color

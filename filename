@@ -6,10 +6,7 @@
 # columns are separated by a tab
 
 # bash configs
-#./bash/bashrc	/home/m47h4r/.bashrc	0	0
-
-# zsh config
-./zsh/zshrc	/home/m47h4r/.zshrc	0	0
+./bash/bashrc	/home/m47h4r/.bashrc	0	0
 
 # bin files
 ./bin/convert_mov_30fps	/home/m47h4r/bin/convert_mov_30fps	0	1
@@ -21,10 +18,6 @@
 ./bin/rp.sh	/home/m47h4r/bin/rp.sh	0	1
 ./bin/rp.sh.readme	/home/m47h4r/bin/rp.sh.readme	0	0
 ./bin/rw.sh	/home/m47h4r/bin/rw.sh	0	1
-
-# vim configs
-#./vim/vimrc	/home/m47h4r/.vimrc	0	0
-#./vim/colorscheme/deus.vim	/home/m47h4r/.vim/colors/deus.vim	0	0
 
 # nvim configs
 ./nvim/init.vim	/home/m47h4r/.config/nvim/init.vim	0	0

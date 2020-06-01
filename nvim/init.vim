@@ -87,6 +87,7 @@ Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
 Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -118,7 +119,7 @@ endif
 colorscheme onedark
 
 " nerdtree
-map <C-x> :NERDTreeToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*

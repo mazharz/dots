@@ -1,4 +1,4 @@
-mkdir to_move
+mkdir -p to_move
 for filename in $(ls *.tif | cut -d'.' -f1); do
 	mv $filename* to_move
 done
