@@ -55,6 +55,10 @@ set clipboard=unnamed
 set clipboard=unnamedplus
 set ignorecase
 
+" automatic fold
+:autocmd FileType python :set foldmethod=indent
+:autocmd FileType javascript,html,css :set foldmethod=syntax
+
 " keep the cursor visible within 3 lines when scrolling
 set scrolloff=1
 
@@ -72,6 +76,12 @@ noremap <leader>n :bn<CR>
 " prev file
 noremap <leader>p :bp<CR>
 
+" shortcut for vimgrep
+noremap [q :cprevious<CR>
+noremap ]q :cnext<CR>
+noremap [Q :cfirst<CR>
+noremap ]Q :clast<CR>
+
 " unhighlight search results using <Ctrl-l>
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
@@ -85,8 +95,6 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'joshdick/onedark.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf'
 Plug 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
@@ -327,3 +335,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDToggleCheckAllLines = 1
 " set easier shortcut for the only useful feature of nerdcommenter ;)
 map <leader>/ <plug>NERDCommenterToggle
+
+" fzf
+nnoremap <leader>o :FZF<CR>
+nnoremap <leader>O :FZF!<CR>
