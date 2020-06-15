@@ -14,6 +14,7 @@ PS1="${COLOR} \w ${DEFAULT}${COLOR_REV}${DEFAULT} "
 # path
 PATH=$PATH:/home/m47h4r/bin
 PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
+PATH=$PATH:/home/m47h4r/.local/bin
 
 # aliases
 alias ls='ls --color=auto'

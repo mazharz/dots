@@ -95,8 +95,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'joshdick/onedark.vim'
-Plug 'junegunn/fzf'
-Plug 'itchyny/lightline.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wesQ3/vim-windowswap'
@@ -104,6 +103,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -131,12 +133,6 @@ map <C-b> :NERDTreeToggle<CR>
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-
-" lightline
-set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
 
 " concealing characters for js
 let g:javascript_conceal_function                  = "ƒ"
@@ -336,6 +332,18 @@ let g:NERDToggleCheckAllLines = 1
 " set easier shortcut for the only useful feature of nerdcommenter ;)
 map <leader>/ <plug>NERDCommenterToggle
 
-" fzf
-nnoremap <leader>o :FZF<CR>
-nnoremap <leader>O :FZF!<CR>
+" provide path to node for coc
+let g:coc_node_path = trim(system('which node'))
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" airline
+let g:airline_left_sep = '»'
+let g:airline_left_sep = ''
+let g:airline_right_sep = '«'
+let g:airline_right_sep = ''
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ' '
+let g:airline_powerline_fonts = 1
+
