@@ -21,6 +21,8 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias vi='nvim'
+alias encaes256='gpg -c --cipher-algo AES256'
+alias decaes256='gpg -d --cipher-algo AES256'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

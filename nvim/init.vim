@@ -95,7 +95,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'joshdick/onedark.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wesQ3/vim-windowswap'
@@ -133,6 +133,7 @@ map <C-b> :NERDTreeToggle<CR>
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+nnoremap <M-p> :CtrlPBuffer<CR>
 
 " concealing characters for js
 let g:javascript_conceal_function                  = "ƒ"
