@@ -74,7 +74,7 @@ noremap <leader>A ggVG
 " next file
 noremap <leader>n :bn<CR>
 " prev file
-noremap <leader>p :bp<CR>
+noremap <leader>N :bp<CR>
 
 " shortcut for vimgrep
 noremap [q :cprevious<CR>
@@ -106,6 +106,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
+Plug 'qpkorr/vim-bufkill'
 
 call plug#end()
 
@@ -348,3 +349,7 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ' '
 let g:airline_powerline_fonts = 1
 
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" vim-bufkill
+nnoremap <leader>d :BD<CR>
