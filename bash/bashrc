@@ -21,8 +21,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias vi='nvim'
-alias encaes256='gpg -c --cipher-algo AES256'
-alias decaes256='gpg -d --cipher-algo AES256'
+alias ytdl='youtube-dl --proxy="socks5://localhost:1088"'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -30,7 +29,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # enable fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export FZF_DEFAULT_OPTS='--height 50% --layout=reverse --border'
+export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
 
 # these were plugins that you used on zsh, try and find alts for bash
 # colored-man-pages      

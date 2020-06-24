@@ -2,5 +2,7 @@ find . -type f > filenames.txt
 mkdir -p converted
 for filename in $(cat filenames.txt | sed "s/\.\///g" | grep ".MOV"); do
 	ffmpeg -i $filename -filter:v "setpts=2.0*PTS" slow.${filename};
+	# can use below for 60 to 24
+	# ffmpeg -i $filename -filter:v "setpts=2.5*PTS" slow.${filename};
 	mv slow.${filename} converted;
 done
