@@ -60,7 +60,10 @@ set ignorecase
 :autocmd FileType javascript,html,css :set foldmethod=syntax
 
 " keep the cursor visible within 3 lines when scrolling
-set scrolloff=1
+set scrolloff=3
+
+" center cursor in file
+:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff+3<CR>
 
 " <C-Space> for Vim's keyword autocomplete
 "inoremap <Nul> <C-n>
@@ -107,6 +110,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
