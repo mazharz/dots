@@ -103,7 +103,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wesQ3/vim-windowswap'
 Plug 'preservim/nerdcommenter'
-Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'ryanoasis/vim-devicons'
