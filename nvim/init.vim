@@ -46,6 +46,7 @@ set hlsearch
 set autoindent
 set tabstop=2
 set shiftwidth=2
+set expandtab
 
 " tab replacement
 set list
@@ -102,14 +103,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wesQ3/vim-windowswap'
-Plug 'preservim/nerdcommenter'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'Yggdroot/indentLine'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 call plug#end()
 
@@ -139,20 +142,8 @@ map <C-b> :NERDTreeToggle<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 nnoremap <M-p> :CtrlPBuffer<CR>
 
-" concealing characters for js
-let g:javascript_conceal_function                  = "ƒ"
-let g:javascript_conceal_null                      = "ø"
-let g:javascript_conceal_this                      = "@"
-let g:javascript_conceal_return                    = "⇚"
-let g:javascript_conceal_undefined                 = "¿"
-let g:javascript_conceal_NaN                       = "ℕ"
-let g:javascript_conceal_prototype                 = "¶"
-let g:javascript_conceal_static                    = "•"
-let g:javascript_conceal_super                     = "Ω"
-let g:javascript_conceal_arrow_function            = "⇒"
-let g:javascript_conceal_noarg_arrow_function      = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-set conceallevel=1 " enables concealing
+" conceal
+set conceallevel=1
 " and to toggle concealing use \l
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
@@ -356,3 +347,7 @@ let g:airline_powerline_fonts = 1
 """""""""""""""""""""""""""""""""""""""""""""
 " vim-bufkill
 nnoremap <leader>d :BD<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" indentLine
+let g:indentLine_char = '│'

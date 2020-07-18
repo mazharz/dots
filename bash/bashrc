@@ -13,7 +13,6 @@ PS1="${COLOR} \w ${DEFAULT}${COLOR_REV}${DEFAULT} "
 
 # path
 PATH=$PATH:/home/m47h4r/bin
-PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"
 PATH=$PATH:/home/m47h4r/.local/bin
 
 # aliases
@@ -23,6 +22,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias ytdl='youtube-dl --proxy="socks5://localhost:1088"'
 alias work='cd ~/mzd/work/; ls'
+alias stuff='cd ~/mzd/git/stuff/; nvim'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
