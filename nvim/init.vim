@@ -291,12 +291,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " prettier (must be installed via npm manually)
 " FORMATTERS
-au FileType javascript setlocal formatprg=prettier\ --parser\ typescript\ --use-tabs
-au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript\ --use-tabs
-au FileType typescript setlocal formatprg=prettier\ --parser\ typescript\ --use-tabs
-au FileType html setlocal formatprg=js-beautify\ --type\ html\ --use-tabs
-au FileType scss setlocal formatprg=prettier\ --parser\ css\ --use-tabs
-au FileType css setlocal formatprg=prettier\ --parser\ css\ --use-tabs
+au FileType javascript setlocal formatprg=prettier\ --parser\ typescript
+au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType css setlocal formatprg=prettier\ --parser\ css
 
 noremap <leader>b mzgggqG`z
 
