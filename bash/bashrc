@@ -22,9 +22,11 @@ alias vim='nvim'
 alias vi='nvim'
 alias ytdl='youtube-dl --proxy="socks5://localhost:1088"'
 alias work='cd ~/mzd/work/; ls'
-alias stuff='cd ~/mzd/git/stuff/; nvim'
-alias lockthatshit='sudo chmod 000 ~/mzd/Private'
-alias unlockthatshit='sudo chmod 755 ~/mzd/Private; nautilus ~/mzd/Private/'
+alias stuff='cd ~/mzd/Git/stuff/; nvim'
+alias lockprivate='sudo chmod 000 ~/mzd/Private'
+alias unlockprivate='sudo chmod 755 ~/mzd/Private; nautilus ~/mzd/Private/'
+alias cur='nvim ~/currents'
+alias todo='nvim ~/todo'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

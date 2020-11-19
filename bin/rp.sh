@@ -12,5 +12,5 @@ while true
 do
 	currentMusic=`shuf -i 1-$musicListLength -n 1`
 	mpv --audio-display=no "${musicList[$currentMusic]}"
-	sleep .5
+	#sleep .5
 done
