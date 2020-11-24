@@ -113,8 +113,17 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 call plug#end()
+
+" coc extensions to install:
+" coc-css coc-cssmodules coc-html coc-svg
+" coc-eslint coc-json
+" coc-python coc-sh coc-sql
+" coc-pairs
 
 " onedark theme
 "

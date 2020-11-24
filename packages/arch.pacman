@@ -1,0 +1,12 @@
+# general
+git firefox vim mpv vlc gimp darktable telegram-desktop lm_sensors htop nethogs ranger openvpn networkmanager-openvpn networkmanager-openconnect ffmpegthumbnailer gucharmap playerctl libgphoto2 gphoto2 gvfs-gphoto2 gvfs-mtp mtpfs acpi sysstat imagemagick python-pip openssh libinput wget libreoffice-fresh tree iptraf-ng tor qbittorrent simplescreenrecorder baobab gparted ttf-fira-code ttf-fira-mono ttf-fira-sans awesome-terminal-fonts unrar net-tools kitty neovim discord blender audacity calibre filezilla kid3 inkscape handbrake virtualbox
+
+# i3 specific
+xorg i3 pulseaudio pulseaudio-alsa pavucontrol xorg-xinit termite rofi maim gnome-calculator network-manager-applet arandr alsa-utils nautilus feh eog gedit evince file-roller dunst gnome-keyring libsecret lxappearance arc-gtk-theme arc-icon-theme
+
+
+# general aur:
+google-chrome vazir-fonts spotify jcal-git gimp-plugin-registry tor-browser skype
+
+# i3 specific aur:
+xkb-switch 

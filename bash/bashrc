@@ -36,10 +36,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
 
-# these were plugins that you used on zsh, try and find alts for bash
-# colored-man-pages      
-# colorize               
-# zsh-autosuggestions    
-# zsh-syntax-highlighting
-                        
-
+# COLORED MAN PAGES
+export LESS_TERMCAP_mb=$'\e[0;35m' # begin blinking
+export LESS_TERMCAP_md=$'\e[0;36m' # begin bold
+export LESS_TERMCAP_me=$'\e[0m'    # end mode
+export LESS_TERMCAP_se=$'\e[0m'    # end standout mode
+export LESS_TERMCAP_so=$'\e[7m'    # begin standout mode - info box
+export LESS_TERMCAP_ue=$'\e[0m'    # end underline
+export LESS_TERMCAP_us=$'\e[0;31m' # begin underline
