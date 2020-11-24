@@ -5,6 +5,9 @@
 # <exec_flag>: flag if must be executable, 1 if not, 0
 # columns are separated by a tab
 
+# system fonts
+./font/fonts.conf	/home/m47h4r/.config/fontconfig/fonts.conf	0	0
+
 # bash configs
 ./bash/bashrc	/home/m47h4r/.bashrc	0	0
 
