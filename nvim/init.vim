@@ -80,6 +80,9 @@ noremap <leader>n :bn<CR>
 " prev file
 noremap <leader>N :bp<CR>
 
+" maximize current window without closing the others (unlike <C-W><C-O>)
+map <C-W><C-F> <C-W>_<C-W><Bar>
+
 " shortcut for vimgrep
 noremap [q :cprevious<CR>
 noremap ]q :cnext<CR>
@@ -113,9 +116,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -149,7 +154,7 @@ map <C-b> :NERDTreeToggle<CR>
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-nnoremap <M-p> :CtrlPBuffer<CR>
+nnoremap <C-M-p> :CtrlPBuffer<CR>
 
 " conceal
 set conceallevel=1
@@ -300,14 +305,14 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " prettier (must be installed via npm manually)
 " FORMATTERS
-au FileType javascript setlocal formatprg=prettier\ --parser\ typescript
-au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript
-au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-au FileType html setlocal formatprg=js-beautify\ --type\ html
-au FileType scss setlocal formatprg=prettier\ --parser\ css
-au FileType css setlocal formatprg=prettier\ --parser\ css
-
-noremap <leader>b mzgggqG`z
+" au FileType javascript setlocal formatprg=prettier\ --parser\ typescript
+" au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript
+" au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+" au FileType html setlocal formatprg=js-beautify\ --type\ html
+" au FileType scss setlocal formatprg=prettier\ --parser\ css
+" au FileType css setlocal formatprg=prettier\ --parser\ css
+" 
+" noremap <leader>b mzgggqG`z
 
 
 " nvim terminal configuration
@@ -326,16 +331,6 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-
-" nerdcommenter
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
-" set easier shortcut for the only useful feature of nerdcommenter ;)
-map <leader>/ <plug>NERDCommenterToggle
 
 " provide path to node for coc
 let g:coc_node_path = trim(system('which node'))
@@ -360,3 +355,12 @@ nnoremap <leader>d :BD<CR>
 """""""""""""""""""""""""""""""""""""""""""""
 " indentLine
 let g:indentLine_char = '│'
+autocmd FileType help,nerdtree IndentLinesDisable " disable in help & nerdtree
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" neoformat auto format on save
+"autocmd BufWritePre "*.(js|jsx)" Neoformat
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END

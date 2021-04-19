@@ -22,11 +22,11 @@ alias vim='nvim'
 alias vi='nvim'
 alias ytdl='youtube-dl --proxy="socks5://localhost:1088"'
 alias work='cd ~/mzd/work/; ls'
-alias stuff='cd ~/mzd/Git/stuff/; nvim'
+alias stuff='cd ~/mzd/Dropbox/Git/stuff/; nvim'
 alias lockprivate='sudo chmod 000 ~/mzd/Private'
 alias unlockprivate='sudo chmod 755 ~/mzd/Private; nautilus ~/mzd/Private/'
-alias cur='nvim ~/currents'
-alias todo='nvim ~/todo'
+alias cur='nvim ~/mzd/wd/currents'
+alias todo='nvim ~/mzd/wd/todo'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -44,3 +44,4 @@ export LESS_TERMCAP_se=$'\e[0m'    # end standout mode
 export LESS_TERMCAP_so=$'\e[7m'    # begin standout mode - info box
 export LESS_TERMCAP_ue=$'\e[0m'    # end underline
 export LESS_TERMCAP_us=$'\e[0;31m' # begin underline
+
