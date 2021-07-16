@@ -1,3 +1,5 @@
+#!/bin/bash
+
 find . -type f > filenames.txt
 mkdir -p converted
 for filename in $(cat filenames.txt | sed "s/\.\///g" | grep ".MOV"); do

@@ -1,0 +1,80 @@
+#!/bin/bash
+
+randomStringLength=
+pathprefix="/home/m47h4r/mzd/Dropbox/Git/passman/"
+
+function randomStringGenerator {
+  local DEFAULT_LENGTH=64
+  local LENGTH=${randomStringLength:-$DEFAULT_LENGTH}
+
+  tr -dc 'A-Za-z0-9!@#$%&()-+' </dev/urandom | head -c $LENGTH
+}
+
+function usage {
+  echo "usage:"
+  echo "  [-c | --create] <service> : Create and print out a new pass."
+  echo "  [-g | --get] <service>    : Print out an existing pass."
+  echo "  [-q | --qr] <service>     : Show existing pass in form of QR code."
+  echo "  [-d | --delete] <service> : Delete existing pass."
+  echo "  [-l | --list]             : List all the passes."
+  echo "  [-h | --help]             : Show this help message."
+}
+
+while [ "$1" != "" ]; do
+  case $1 in
+    -c | --create )
+      shift
+      service=$1
+      filename="${pathprefix}${service}"
+      password="$(randomStringGenerator)"
+      read -s -p "Pass: " pass
+      read -s -p "Confirm: " confirm
+      if [ "$pass" == "$confirm" ]; then
+        echo "$password" > "$filename"
+        echo "$password"
+        rm -f "$filename.gpg"
+        gpg -c --cipher-algo aes256 --batch --passphrase "$pass" "$filename"
+        rm "$filename"
+      else
+        echo "Encryption passwords entered didn't match!"
+      fi
+      ;;
+    -g | --get )
+      shift
+      service=$1
+      filename="${pathprefix}${service}.gpg"
+      read -s -p "Pass: " pass
+      gpg -q -d --batch --passphrase "$pass" "$filename"
+      ;;
+    -q | --qr )
+      shift
+      service=$1
+      filename="${pathprefix}${service}.gpg"
+      read -s -p "Pass: " pass
+      pass=`gpg -q -d --batch --passphrase "$pass" "$filename"`
+      qrencode -o - "$pass" | display
+      ;;
+    -d | --delete )
+      shift
+      service=$1
+      filename="${pathprefix}${service}.gpg"
+      read -p "Are you sure ? [y/N] " confirm
+      if [ "$confirm" == "y" ]; then
+        rm -f "$filename"
+        echo "Deleted ${service} successfully!"
+      else
+        echo "${service} password is safe."
+      fi
+      ;;
+    -l | --list )
+      ls -1 "${pathprefix}" | sed 's/.gpg//g'
+      ;;
+    -h | --help )
+      usage
+      ;;
+    * )
+      exit 1
+  esac
+  shift
+done
+

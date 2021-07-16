@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 xsetwacom set "HID 256c:006d Pad pad" Button 1 key "ctrl"
 xsetwacom set "HID 256c:006d Pad pad" Button 2 key "shift"

@@ -24,6 +24,7 @@
 ./bin/gpg-loop	/home/m47h4r/bin/gpg-loop	0	1
 ./bin/vlc-player	/home/m47h4r/bin/vlc-player	0	1
 ./bin/huion-buttons	/home/m47h4r/bin/huion-buttons	0	1
+./bin/passman	/home/m47h4r/bin/passman	0	1
 # i3-specific
 #./bin/brightness	/home/m47h4r/bin/brightness	0	1
 #./bin/note.txt	/home/m47h4r/bin/note.txt	0	0
