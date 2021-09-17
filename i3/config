@@ -21,7 +21,7 @@ bindsym $mod+q kill
 #bindsym $mod+d exec dmenu_run -b -i -fn 'Monospace-13' -nb '#1a1a1a' -sb '#5c5fd7' -nf '#dadada' -sf '#1a1a1a' -p '$'
 bindsym $mod+d exec rofi -show drun
 bindsym $mod+w exec rofi -show window
-bindsym $mod+r exec rofi -show ssh
+#bindsym $mod+r exec rofi -show ssh
 
 # change focus
 bindsym $mod+h focus left
@@ -84,8 +84,8 @@ new_window pixel 2
 hide_edge_borders smart
 
 # gaps
-gaps inner 0
-gaps outer 0
+# gaps inner 0
+# gaps outer 0
 
 
 # define workspaces
@@ -195,10 +195,8 @@ bar {
 
 # key bindings
 # screenshot
-bindsym $mod+x exec maim /home/m47h4r/Picture/$(date +%s).png
-bindsym $mod+ctrl+x exec maim -s /home/m47h4r/Picture/$(date +%s).png
-# calculator
-bindsym XF86Calculator exec gnome-calculator
+bindsym $mod+x exec maim /home/m47h4r/Pictures/$(date +%s).png
+bindsym $mod+ctrl+x exec maim -s /home/m47h4r/Pictures/$(date +%s).png
 # brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 5
@@ -210,6 +208,8 @@ bindsym XF86AudioRaiseVolume exec ~/bin/volume inc
 # monitor
 bindsym $mod+m exec ~/bin/monitor dual
 bindsym $mod+shift+m exec ~/bin/monitor mono
+# huion tablet
+bindsym $mod+Mod1+shift+h exec ~/bin/huion-buttons
 # keyboard layout
 bindsym $mod+i exec ~/bin/kb_layout
 # lock
@@ -220,11 +220,11 @@ bindsym XF86AudioPrev exec playerctl --player=vlc previous
 bindsym XF86AudioPlay exec playerctl --player=vlc play-pause
 
 # program shortcuts
-bindsym $mod+c exec /home/m47h4r/bin/chrome.sh
-bindsym $mod+Mod1+f exec nautilus -w
+bindsym $mod+c exec exec google-chrome
+bindsym $mod+Mod1+f exec thunar
 bindsym $mod+Mod1+t exec telegram-desktop
 bindsym $mod+Mod1+d exec discord
-bindsym $mod+Mod1+x exec firefox
+bindsym $mod+Mod1+s exec slack
 bindsym $mod+Mod1+v exec vlc --random --loop --ignore-filetypes "rar" "/home/m47h4r/mzd/Music/"
 # player seek forward/backward
 bindsym $mod+Mod1+Ctrl+Left exec playerctl position 10-
@@ -232,10 +232,11 @@ bindsym $mod+Mod1+Ctrl+Right exec playerctl position 10+
 
 
 # needed for i3blocks for capslock and numlock
+# handled by xfce
 #bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 #bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 # autostart programs
 exec ~/bin/wallpaper
 exec ~/bin/kb_layout
-exec nm-applet &
+exec dunst &
