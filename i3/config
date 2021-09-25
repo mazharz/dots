@@ -4,7 +4,7 @@ set $mod Mod4
 # set colors
 set $bg #1a1a1a
 set $fg #dadada
-set $ac #b93761
+set $ac #D4B483
 
 # set the font
 font pango:Fira Code 10
@@ -77,8 +77,8 @@ bindsym $mod+z focus child
 focus_follows_mouse yes 
 
 # border style
-new_window pixel 2
-#new_window normal 2
+#new_window pixel 2
+new_window normal 2
 
 # hide alone-window borders
 hide_edge_borders smart
@@ -215,17 +215,20 @@ bindsym $mod+i exec ~/bin/kb_layout
 # lock
 bindsym $mod+semicolon exec ~/bin/lock
 # control vlc with keyboard
-bindsym XF86AudioNext exec playerctl --player=vlc next
-bindsym XF86AudioPrev exec playerctl --player=vlc previous
-bindsym XF86AudioPlay exec playerctl --player=vlc play-pause
+bindsym XF86AudioNext exec playerctl --player=rhythmbox next
+bindsym XF86AudioPrev exec playerctl --player=rhythmbox previous
+bindsym XF86AudioPlay exec playerctl --player=rhythmbox play-pause
 
 # program shortcuts
 bindsym $mod+c exec exec google-chrome
 bindsym $mod+Mod1+f exec thunar
+bindsym $mod+p exec catfish  --large-icons --thumbnails --path=/home/m47h4r
 bindsym $mod+Mod1+t exec telegram-desktop
 bindsym $mod+Mod1+d exec discord
 bindsym $mod+Mod1+s exec slack
-bindsym $mod+Mod1+v exec vlc --random --loop --ignore-filetypes "rar" "/home/m47h4r/mzd/Music/"
+bindsym $mod+Mod1+c exec code
+#bindsym $mod+Mod1+v exec vlc --random --loop --ignore-filetypes "rar" "/home/m47h4r/mzd/Music/"
+bindsym $mod+Mod1+v exec rhythmbox
 # player seek forward/backward
 bindsym $mod+Mod1+Ctrl+Left exec playerctl position 10-
 bindsym $mod+Mod1+Ctrl+Right exec playerctl position 10+

@@ -6,8 +6,8 @@
 [[ $- != *i* ]] && return
 
 # prompt
-COLOR="\[$(tput setab 4)$(tput setaf 0)\]"
-COLOR_REV="\[$(tput setaf 4)\]"
+COLOR="\[$(tput setab 3)$(tput setaf 0)\]"
+COLOR_REV="\[$(tput setaf 3)\]"
 DEFAULT="\[$(tput sgr0)\]"
 PS1="${COLOR} \w ${DEFAULT}${COLOR_REV}${DEFAULT} "
 
