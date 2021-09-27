@@ -1,7 +1,0 @@
-to find out what types of files are there, I used:
-
-$ find . -type f | rev | cut -d'.' -f1 | rev | sort | uniq -c
-
-so I came up with this to filter files based upon:
-
-$ find . -type f | grep -E -i "(\.flac|\.m4a|\.mp3|\.webm)"
