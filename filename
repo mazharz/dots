@@ -19,5 +19,3 @@
 # nvim configs
 ./nvim/init.vim	/home/m47h4r/.config/nvim/init.vim	0	0
 
-# dunst configs
-./dunst/dunstrc	/home/m47h4r/.config/dunst/dunstrc	0	0
