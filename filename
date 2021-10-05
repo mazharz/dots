@@ -19,3 +19,5 @@
 # nvim configs
 ./nvim/init.vim	/home/m47h4r/.config/nvim/init.vim	0	0
 
+# zsh config
+./zsh/zshrc	/home/m47h4r/.zshrc	0	0
