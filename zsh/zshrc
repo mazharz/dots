@@ -107,3 +107,21 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias todo="nvim ~/mzd/wd/todo"
+alias wd="cd ~/mzd/wd/"
+alias work="cd ~/mzd/work/"
+alias workgwat="cd ~/mzd/work/gwat/"
+alias music="cd ~/mzd/Music/"
+alias lockPrivate="sudo chmod 000 ~/mzd/Multimedia/Private"
+alias unlockPrivate="sudo chmod 775 ~/mzd/Multimedia/Private; nautilus ~/mzd/Multimedia/Private"
+
+#git aliases
+alias git-log-origin-to-head="git log origin..HEAD --format=%B"
+
+# add nvm path
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
+
