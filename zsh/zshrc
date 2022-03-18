@@ -8,7 +8,7 @@ export ZSH="/home/m47h4r/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="norm"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -26,7 +26,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
@@ -94,25 +94,20 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+EDITOR='nvim'
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias todo="nvim ~/mzd/wd/todo"
 alias wd="cd ~/mzd/wd/"
-alias work="cd ~/mzd/work/"
-alias workgwat="cd ~/mzd/work/gwat/"
-alias music="cd ~/mzd/Music/"
-alias lockPrivate="sudo chmod 000 ~/mzd/Multimedia/Private"
-alias unlockPrivate="sudo chmod 775 ~/mzd/Multimedia/Private; nautilus ~/mzd/Multimedia/Private"
+alias code="cd ~/mzd/code/"
+alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
+alias unlockPrivate="sudo chmod 775 ~/mzd/multimedia/private; nautilus ~/mzd/multimedia/private"
+alias records="cd ~/mzd/text/records; nvim records.md"
+alias cheatsheets="cd ~/mzd/text/cheatsheets; nvim README.md"
+alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /media/m47h4r/MZED"
 
 #git aliases
 alias git-log-origin-to-head="git log origin..HEAD --format=%B"
@@ -125,3 +120,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
 
+# adds stack binary path
+export PATH=/home/m47h4r/.stack/snapshots/x86_64-linux-tinfo6/6ed36edb9ae13dac9f1c29421d514ce4c312e7b688a6eada16298d5d021e9f29/8.10.7/bin:/home/m47h4r/.stack/compiler-tools/x86_64-linux-tinfo6/ghc-8.10.7/bin:/home/m47h4r/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.7/bin:/home/m47h4r/.local/bin:/home/m47h4r/.nvm/versions/node/v16.10.0/bin:/home/m47h4r/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/m47h4r/.fzf/bin:$PATH

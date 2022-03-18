@@ -95,16 +95,17 @@ nnoremap <silent> <C-l> :nohl<CR><C-l>
 " put a vertical line at column 80
 set colorcolumn=80
 
-" ======================================================================
+" =============================================================================
 " Plugin configuration
-" ======================================================================
+" uses https://github.com/junegunn/vim-plug to manage plugins
+" =============================================================================
 call plug#begin(stdpath('data') . '/plugged')
-
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'joshdick/onedark.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim' " https://github.com/ctrlpvim/ctrlp.vim
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" coc plugins: coc-tsserver coc-yaml coc-tailwindcss coc-swagger coc-svg coc-sql coc-sh coc-python coc-prettier coc-json coc-html-css-support coc-html coc-highlight coc-graphql coc-git coc-eslint coc-emmet coc-cssmodules coc-css coc-angular
 Plug 'wesQ3/vim-windowswap'
 Plug 'mattn/emmet-vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -115,39 +116,29 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'sbdchd/neoformat'
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
+  \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'jiangmiao/auto-pairs'
-
+Plug 'easymotion/vim-easymotion'
+Plug 'jparise/vim-graphql'
 call plug#end()
-
-" coc extensions to install:
-" coc-css coc-cssmodules coc-html coc-svg
-" coc-eslint coc-json
-" coc-python coc-sh coc-sql
-" coc-pairs
-
-" onedark theme
-"
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (has("nvim"))
-	"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
-"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-if (has("termguicolors"))
-	set termguicolors
-endif
 
 " colorscheme
 colorscheme onedark
+" enable correct colors
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
 " nerdtree
 map <C-b> :NERDTreeToggle<CR>
@@ -158,10 +149,13 @@ nnoremap <C-M-p> :CtrlPBuffer<CR>
 
 " conceal
 set conceallevel=1
-" and to toggle concealing use \l
+" and to toggle concealing use <leader>l
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
+" =============================================================================
 " coc.nvim
+" =============================================================================
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
@@ -199,7 +193,6 @@ endfunction
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
@@ -214,6 +207,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gvd :call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> ghd :call CocAction('jumpDefinition', 'split')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -256,6 +251,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>  <Plug>(coc-fix)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -301,19 +297,6 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-
-" prettier (must be installed via npm manually)
-" FORMATTERS
-" au FileType javascript setlocal formatprg=prettier\ --parser\ typescript
-" au FileType javascript.jsx setlocal formatprg=prettier\ --parser\ typescript
-" au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-" au FileType html setlocal formatprg=js-beautify\ --type\ html
-" au FileType scss setlocal formatprg=prettier\ --parser\ css
-" au FileType css setlocal formatprg=prettier\ --parser\ css
-" 
-" noremap <leader>b mzgggqG`z
-
 
 " nvim terminal configuration
 nnoremap <leader>t :terminal<CR>

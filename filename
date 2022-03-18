@@ -10,14 +10,27 @@
 # ./bin/convert_mov_halfspeed	/home/m47h4r/bin/convert_mov_halfspeed	0	1
 # ./bin/convert_mp4_mov	/home/m47h4r/bin/convert_mp4_mov	0	1
 ./bin/mv_tif	/home/m47h4r/bin/mv_tif	0	1
+./bin/mv_jpg	/home/m47h4r/bin/mv_jpg	0	1
 ./bin/regex_renamer.py	/home/m47h4r/bin/regex_renamer.py	0	1
 ./bin/rp.sh	/home/m47h4r/bin/rp.sh	0	1
 ./bin/rw.sh	/home/m47h4r/bin/rw.sh	0	1
 ./bin/gpg-loop	/home/m47h4r/bin/gpg-loop	0	1
 ./bin/huion-buttons	/home/m47h4r/bin/huion-buttons	0	1
+./bin/webm-to-ogg	/home/m47h4r/bin/webm-to-ogg	0	1
 
 # nvim configs
 ./nvim/init.vim	/home/m47h4r/.config/nvim/init.vim	0	0
 
 # zsh config
 ./zsh/zshrc	/home/m47h4r/.zshrc	0	0
+
+# ranger config
+# refer to https://wiki.archlinux.org/title/ranger for getting new config files
+./ranger/rifle.conf	/home/m47h4r/.config/ranger/rifle.conf	0	0
+./ranger/commands.py	/home/m47h4r/.config/ranger/commands.py	0	0
+./ranger/commands_full.py	/home/m47h4r/.config/ranger/commands_full.py	0	0
+./ranger/rc.conf	/home/m47h4r/.config/ranger/rc.conf	0	0
+./ranger/scope.sh	/home/m47h4r/.config/ranger/scope.sh	0	1
+
+# kitty config
+./kitty/kitty.conf	/home/m47h4r/.config/kitty/kitty.conf	0	0
