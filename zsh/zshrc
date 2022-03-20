@@ -100,7 +100,7 @@ EDITOR='nvim'
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias todo="nvim ~/mzd/wd/todo"
+alias t="nvim ~/mzd/wd/todo"
 alias wd="cd ~/mzd/wd/"
 alias code="cd ~/mzd/code/"
 alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
@@ -121,5 +121,3 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 100% --layout=reverse-list --border'
 
-# adds stack binary path
-export PATH=/home/m47h4r/.stack/snapshots/x86_64-linux-tinfo6/6ed36edb9ae13dac9f1c29421d514ce4c312e7b688a6eada16298d5d021e9f29/8.10.7/bin:/home/m47h4r/.stack/compiler-tools/x86_64-linux-tinfo6/ghc-8.10.7/bin:/home/m47h4r/.stack/programs/x86_64-linux/ghc-tinfo6-8.10.7/bin:/home/m47h4r/.local/bin:/home/m47h4r/.nvm/versions/node/v16.10.0/bin:/home/m47h4r/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/m47h4r/.fzf/bin:$PATH
