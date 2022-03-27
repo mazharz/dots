@@ -24,13 +24,5 @@
 # zsh config
 ./zsh/zshrc	/home/m47h4r/.zshrc	0	0
 
-# ranger config
-# refer to https://wiki.archlinux.org/title/ranger for getting new config files
-./ranger/rifle.conf	/home/m47h4r/.config/ranger/rifle.conf	0	0
-./ranger/commands.py	/home/m47h4r/.config/ranger/commands.py	0	0
-./ranger/commands_full.py	/home/m47h4r/.config/ranger/commands_full.py	0	0
-./ranger/rc.conf	/home/m47h4r/.config/ranger/rc.conf	0	0
-./ranger/scope.sh	/home/m47h4r/.config/ranger/scope.sh	0	1
-
 # kitty config
 ./kitty/kitty.conf	/home/m47h4r/.config/kitty/kitty.conf	0	0
