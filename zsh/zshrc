@@ -100,12 +100,10 @@ EDITOR='nvim'
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias t="nvim ~/mzd/wd/todo"
 alias wd="cd ~/mzd/wd/"
 alias code="cd ~/mzd/code/"
 alias lockPrivate="sudo chmod 000 ~/mzd/multimedia/private"
 alias unlockPrivate="sudo chmod 775 ~/mzd/multimedia/private; nautilus ~/mzd/multimedia/private"
-alias records="cd ~/mzd/text/records; nvim records.md"
 alias cheatsheets="cd ~/mzd/text/cheatsheets; nvim README.md"
 alias backup="unlockPrivate; rsync -au --delete --progress /home/m47h4r/mzd/* /media/m47h4r/MZED"
 
