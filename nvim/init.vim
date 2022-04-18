@@ -22,6 +22,9 @@ set fileencoding=utf-8
 set number relativenumber
 "set number
 
+" set splits on bottom and right
+set splitbelow splitright
+
 " enable matchit plugin which ships with vim and greatly enhances '%'
 runtime macros/matchit.vim
 
@@ -101,8 +104,9 @@ set colorcolumn=80
 " =============================================================================
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'joshdick/onedark.vim'
-Plug 'ctrlpvim/ctrlp.vim' " https://github.com/ctrlpvim/ctrlp.vim
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " coc plugins: coc-tsserver coc-yaml coc-tailwindcss coc-swagger coc-svg coc-sql coc-sh coc-python coc-prettier coc-json coc-html-css-support coc-html coc-highlight coc-graphql coc-git coc-eslint coc-emmet coc-cssmodules coc-css coc-angular
@@ -115,6 +119,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
@@ -129,7 +134,7 @@ Plug 'jparise/vim-graphql'
 call plug#end()
 
 " colorscheme
-colorscheme onedark
+colorscheme gruvbox
 " enable correct colors
 if (empty($TMUX))
   if (has("nvim"))
@@ -143,9 +148,15 @@ endif
 " nerdtree
 map <C-b> :NERDTreeToggle<CR>
 
-" ctrlp
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-nnoremap <C-M-p> :CtrlPBuffer<CR>
+" fzf
+nnoremap <C-p> :Files<CR>
+nnoremap <C-M-p> :Buffers<CR>
+nnoremap <C-s> :Ag<Cr>
+nnoremap <C-M-s> :Ag!<Cr>
+nnoremap <leader>; :Commands<Cr>
+" jumpt to existing window if already in buffers
+let g:fzf_buffers_jump = 1
+let g:fzf_commands_expect = 'alt-enter'
 
 " conceal
 set conceallevel=1

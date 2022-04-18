@@ -17,9 +17,17 @@
 ./bin/gpg-loop	/home/m47h4r/bin/gpg-loop	0	1
 ./bin/huion-buttons	/home/m47h4r/bin/huion-buttons	0	1
 ./bin/webm-to-ogg	/home/m47h4r/bin/webm-to-ogg	0	1
+./bin/cht.sh	/home/m47h4r/bin/cht.sh	0	1
+./bin/wttr	/home/m47h4r/bin/wttr	0	1
+
+# tmux
+./tmux/tmux.conf	/home/m47h4r/.tmux.conf	0	0
+./tmux/tmux-cht-languages	/home/m47h4r/.tmux-cht-languages	0	0
+./tmux/tmux-cht-commands	/home/m47h4r/.tmux-cht-commands	0	0
 
 # nvim configs
 ./nvim/init.vim	/home/m47h4r/.config/nvim/init.vim	0	0
+./nvim/coc-settings.json	/home/m47h4r/.config/nvim/coc-settings.json	0	0
 
 # zsh config
 ./zsh/zshrc	/home/m47h4r/.zshrc	0	0
