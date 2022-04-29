@@ -61,7 +61,7 @@ set ignorecase
 
 " automatic fold
 :autocmd FileType python :set foldmethod=indent
-:autocmd FileType javascript,html,css :set foldmethod=syntax
+:autocmd FileType typescript,javascript,html,css :set foldmethod=syntax
 
 " keep the cursor visible within 3 lines when scrolling
 set scrolloff=3
@@ -117,7 +117,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
+" Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'Yggdroot/indentLine'
@@ -151,8 +152,8 @@ map <C-b> :NERDTreeToggle<CR>
 " fzf
 nnoremap <C-p> :Files<CR>
 nnoremap <C-M-p> :Buffers<CR>
-nnoremap <C-s> :Ag<Cr>
-nnoremap <C-M-s> :Ag!<Cr>
+nnoremap <C-s> :Ag!<Cr>
+" nnoremap <C-M-s> :Ag<Cr> " not fullscreen
 nnoremap <leader>; :Commands<Cr>
 " jumpt to existing window if already in buffers
 let g:fzf_buffers_jump = 1
@@ -358,3 +359,10 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
+
+" easy-motion overwindow shortcut
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" fix for tsx tcomment_vim issue
+let g:tcomment#filetype#guess_typescriptreact = 1
