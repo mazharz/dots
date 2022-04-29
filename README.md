@@ -1,4 +1,7 @@
 # dots
+
+NOTE: I have `dotfiles` which replaces this repo.
+
 This is a very simple solution to copy all my configuration files and
 custom binaries.
 
